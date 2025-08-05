@@ -8,7 +8,7 @@ const { forceGridAnimation } = wrapGrid(grid);
 const tiles = Array.from(document.querySelectorAll(".tile"));
 const emptyTile = document.querySelector(".tile--empty");
 
-// Get congratulations heading
+
 const heading = document.querySelector(".heading");
 
 const areaKeys = {
@@ -26,18 +26,17 @@ const areaKeys = {
 
 tiles.map(tile => {
 	tile.addEventListener("click", event => {
-		// Grab the grid area set on the clicked tile and empty tile
+		
 		const tileArea = tile.style.getPropertyValue("--area");
 		const emptyTileArea = emptyTile.style.getPropertyValue("--area");
 
-		// Swap the empty tile with the clicked tile
+		
 		emptyTile.style.setProperty("--area", tileArea);
 		tile.style.setProperty("--area", emptyTileArea);
 
-		// Animate the tiles
+	
 		forceGridAnimation();
 
-		// Unlock and lock tiles
 		unlockTiles(tileArea);
 	});
 });
@@ -75,7 +74,7 @@ const isComplete = tiles => {
 };
 
 
-// Inversion calculator
+
 const inversionCount = array => {
 	
 
